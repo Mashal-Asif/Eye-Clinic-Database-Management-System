@@ -1,0 +1,7 @@
+# 2. Part-2 of Authentiation-Layer
+DROP TABLE IF EXISTS roles;
+
+CREATE TABLE Roles (
+    Role_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Role_Name VARCHAR(50) NOT NULL UNIQUE
+);

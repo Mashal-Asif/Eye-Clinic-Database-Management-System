@@ -1,0 +1,14 @@
+# Part-1 of Authentiation Layer
+
+CREATE TABLE Users(
+    User_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(50) NOT NULL UNIQUE,
+    Password_Hash VARCHAR(255) NOT NULL,
+    Email VARCHAR(100) UNIQUE,
+    Phone VARCHAR(20),
+    Role_ID INT NOT NULL,
+    Is_Active BOOLEAN DEFAULT TRUE,
+    Created_At DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Last_Login DATETIME NULL,
+    FOREIGN KEY (Role_ID) REFERENCES Roles(Role_ID)
+);

@@ -1,0 +1,10 @@
+CREATE TABLE Patient_Management (
+    PM_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Patient_ID INT NOT NULL,
+    Admin_User_ID INT NOT NULL,
+    Action_Type ENUM('CREATE', 'UPDATE', 'DELETE', 'BLOCK', 'VIEW') NOT NULL,
+    Notes VARCHAR(255),
+    Action_Time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID),
+    FOREIGN KEY (Admin_User_ID) REFERENCES Users(User_ID)
+);
